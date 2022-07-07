@@ -3,7 +3,7 @@
 #include "caixa.h"
 #include "venda.h"
 
-int menu(){
+void menu(){
     //variaveis
     int opmenu;
     menu:
@@ -30,18 +30,23 @@ int menu(){
         venda();
         break;
     
+    case 0:
+    break;
     default:
         erro:
         printf("\n|Valor Invalido");
-        printf("\n|[1] Para voltar [0] Sair");
-        scanf("")
+        printf("\n|[1] Para voltar [0] Sair\n");
+        scanf("\n%d",&opmenu);
         switch (opmenu)
         {
         case 1:
             goto menu;
             break;
+
         case 0:
+        return;
         break;
+
         default:
             system("cls");
             goto erro;
